@@ -30,3 +30,7 @@ class RadarProcessor:
         
         # 1D FFT along the slow-time (Doppler) axis
         range_doppler = np.fft.fftshift(np.fft.fft(range_fft, axis=0), axes=0)
+
+        # Return magnitude spectrogram (micro-Doppler signature)
+        return np.abs(range_doppler)
+
